@@ -1,16 +1,16 @@
 import React from "react";
+import { View, Image, StyleSheet, Dimensions } from "react-native"; 
 
-import { View, Image, StyleSheet } from "react-native-web"; 
+const img_large = require('../../res/img/logo.png');
 
-const img_large = require('../res/img/logo.png')
+const screenWidth = Dimensions.get('window').width;
 
 const StartingScreen = () => {
     return(
         <View style={styles.container}>
             <Image 
-                style={styles.image}
                 source={img_large}
-
+                style={styles.image}
             />
         </View>
     );
@@ -21,10 +21,11 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        backGroundColor: 'white'
+        backgroundColor: 'white',
     },
     image: {
-        width: '50vw'
+        width: screenWidth * 0.5, 
+        resizeMode: 'contain',  
     }
 })
 
