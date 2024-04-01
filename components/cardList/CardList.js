@@ -7,6 +7,7 @@ const screenWidth = Dimensions.get('window').width;
 
 const CardList = () => {
     const [ isLoading, setIsLoading ] = useState(false);
+    const [ isAllCardLoading, setAllCardLoading ] = useState(false);
 
 
 
@@ -18,11 +19,13 @@ const CardList = () => {
                 </Text>
             </View>
             <View style={styles.cardBlock}>
-                {!isLoading? (
-                    <>
+                {isLoading? (
+                    <>  
+                        {!isAllCardLoading? (
                         <View style={styles.loader}>
                             <Loader />
-                        </View>
+                        </View>) : null }
+                        <Cards />
                         <Text style={styles.loadCardsText}>Подгрузка компаний</Text>
                     </>
                 ) : (
@@ -61,7 +64,8 @@ const styles = StyleSheet.create({
 
     },
     loader: {
-        marginTop: screenWidth *0.04
+        marginTop: screenWidth *0.04,
+    
     }    
 })
 

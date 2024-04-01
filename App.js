@@ -7,8 +7,8 @@ import CardList from './components/cardList/CardList';
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <StartingScreen /> */}
-      <CardList />
+      <StartingScreen />
+      {/* <CardList /> */}
       <StatusBar style="auto" />
     </View>
   );

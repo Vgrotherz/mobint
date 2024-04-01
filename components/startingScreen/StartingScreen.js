@@ -1,18 +1,17 @@
 import React from "react";
-import { View, Image, StyleSheet, Dimensions } from "react-native"; 
+import { View, Image, StyleSheet} from "react-native"; 
 
+import { img_large, screenWidth } from "../utils/sizes";
  
 
-const img_large = require('../../res/img/logo.png');
-
-const screenWidth = Dimensions.get('window').width;
+const imgLarge = require('../../res/img/logo.png');
 
 const StartingScreen = () => {
 
     return(
         <View style={styles.container}>
             <Image 
-                source={img_large}
+                source={imgLarge}
                 style={styles.image}
             />
         </View>
@@ -27,7 +26,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
     image: {
-        width: screenWidth * 0.5,  
+        width: img_large, 
+        height: img_large 
     }
 })
 
