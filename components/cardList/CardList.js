@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { View, Image, Text, StyleSheet, Dimensions } from "react-native"; 
 import Cards from "../cards/Cards";
 import Loader from "../loader/Loader";
-
-const screenWidth = Dimensions.get('window').width;
+import { cardBackgroundColor, highlightTextColor, mainColor, margin1, margin2, text1, text2, textColor } from "../utils/parameters";
 
 const CardList = () => {
     const [ isLoading, setIsLoading ] = useState(false);
@@ -18,10 +17,10 @@ const CardList = () => {
                     Управление картами
                 </Text>
             </View>
-            <View style={styles.cardBlock}>
-                {isLoading? (
+            <View style={styles.cardsBlock}>
+                {!isLoading? (
                     <>  
-                        {!isAllCardLoading? (
+                        {isAllCardLoading? (
                         <View style={styles.loader}>
                             <Loader />
                         </View>) : null }
@@ -44,27 +43,28 @@ const styles = StyleSheet.create({
     manageBlock: {
         flex:1,
         alignItems:'center',
+        backgroundColor: cardBackgroundColor,
     },
     manageText: {
-        color: '#2688eb',
-        fontSize: screenWidth * 0.1,
-        marginTop: screenWidth * 0.04,
-        marginBottom: screenWidth * 0.04,
-   
+        color: mainColor,
+        fontSize: text1,
+        marginTop: margin1,
+        marginBottom: margin1,
     }, 
-    cardBlock : {
+    cardsBlock : {
         flex: 9,
-        backgroundColor: '#efefef',
+        backgroundColor: textColor,
         alignItems:'center',
     },
     loadCardsText: {
-        color: "#1a1a1a",
-        marginTop: screenWidth * 0.02,
-        fontSize: screenWidth * 0.06,
+        color: highlightTextColor,
+        marginTop: margin2,
+        fontSize: text2,
 
     },
     loader: {
-        marginTop: screenWidth *0.04,
+        marginTop: margin1,
+        marginBottom: margin2
     
     }    
 })

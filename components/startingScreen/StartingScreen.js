@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, StyleSheet} from "react-native"; 
 
-import { img_large, screenWidth } from "../utils/sizes";
+import { img_large } from "../utils/parameters";
  
 
 const imgLarge = require('../../res/img/logo.png');
