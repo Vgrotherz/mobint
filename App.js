@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, SafeAreaView } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 
 import StartingScreen from './components/startingScreen/StartingScreen';

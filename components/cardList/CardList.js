@@ -19,14 +19,17 @@ const CardList = () => {
                 </Text>
             </View>
             <View style={styles.cardsBlock}>
-                {isLoading? (
+                {!isLoading? (
                     <>  
-                        {/* <Cards /> */}
+                        <Cards />
                         {!isAllCardLoading? (
-                        <View style={styles.loader}>
-                            <Loader />
-                        </View>) : null }
-                        <Text style={styles.loadCardsText}>Подгрузка компаний</Text>
+                        <>
+                            <View style={styles.loader}>
+                                <Loader />
+                            </View> 
+                            <Text style={styles.loadCardsText}>Подгрузка компаний</Text>
+                        </>
+                        ) : null }
                     </>
                 ) : (
                     <Cards setIsLoading={setIsLoading}/>

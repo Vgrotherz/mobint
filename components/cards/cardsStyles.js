@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
-import { screenWidth, margin1, text1, iconSize, margin2, textColor, text0, backgroundColor, mainColor, margin3, accentColor, text2, text3 } from "../utils/parameters"; 
+import { screenWidth, margin1, text1, iconSize, margin2, textColor, text0, backgroundColor, mainColor, margin3, accentColor, text2, text3, cardBackgroundColor, highlightTextColor } from "../utils/parameters"; 
 
 export const styles = StyleSheet.create({
     wholeCompanies: {
         width:"100%"
     },
     cardBlock : {
-        // width: '100%',
+        // backgroundColor: 'blue',
         // margin: margin1,
         marginTop: margin1,
         marginLeft: margin1,
@@ -14,9 +14,10 @@ export const styles = StyleSheet.create({
         
     },
     container: {
+        width: '100%',
         borderRadius: 30,
         flexDirection: 'column',
-        backgroundColor: "#fff"
+        backgroundColor: cardBackgroundColor
     }, 
     innerContiner: {
         marginTop: margin1,
@@ -39,7 +40,9 @@ export const styles = StyleSheet.create({
         
     },
     cardName: {
-        fontSize: text1
+        fontSize: text1,
+        color: highlightTextColor,
+        flexWrap: 'wrap',
     },
 
     margin1_Top: {
@@ -64,16 +67,19 @@ export const styles = StyleSheet.create({
         borderRadius: 40,
         width: screenWidth * 0.15,
         height: screenWidth * 0.15,
-        marginBottom: margin2
+        marginBottom: margin2,
+        // paddingLeft: 10,
     },
     scoreNumber: {
-        fontSize: text0
+        fontSize: text0,
+        color: highlightTextColor,
     },
     scoreText: {
         color: backgroundColor,
         marginLeft: margin2
     }, 
     scoreBlock: {
+        marginTop: margin1,
         alignItems: 'flex-end'
     },
     cashbackBlock:{
@@ -114,10 +120,13 @@ export const styles = StyleSheet.create({
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: textColor
+        backgroundColor: backgroundColor
     },
     buttonText: {
         color: mainColor,
         fontSize: text2
+    },
+    wrap: {
+        flexWrap:'wrap',
     }
 })

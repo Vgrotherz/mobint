@@ -20,7 +20,7 @@ const fetchData = async () => {
         }
 
         const data = await response.json();
-        console.log("Data:", data);
+        // console.log("Data:", data);
         return data;
     } catch (error) {
         console.error("Error fetching data:", error);
