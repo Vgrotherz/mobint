@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { screenWidth, margin1, text1, iconSize, margin2, textColor, text0, backgroundColor, mainColor, margin3, accentColor, text2, text3, cardBackgroundColor, highlightTextColor } from "../utils/parameters"; 
+import { screenWidth, margin1, text1, iconSize, margin2, textColor, text0, backgroundColor, mainColor, margin3, accentColor, text2, text3, cardBackgroundColor, highlightTextColor, logoSize } from "../utils/parameters"; 
 
 export const styles = StyleSheet.create({
     wholeCompanies: {
@@ -59,24 +59,29 @@ export const styles = StyleSheet.create({
     }
     ,
     iconSize: {
-        marginTop: margin1,
         width: iconSize,
         height: iconSize
     },
+    smallIcons:{
+        marginTop: margin1,
+        marginLeft: margin1,
+    },
     logoStyle: {
         borderRadius: 40,
-        width: screenWidth * 0.15,
-        height: screenWidth * 0.15,
+        width: logoSize,
+        height: logoSize,
         marginBottom: margin2,
         // paddingLeft: 10,
     },
     scoreNumber: {
         fontSize: text0,
+        alignItems: 'flex-end',
         color: highlightTextColor,
     },
     scoreText: {
         color: backgroundColor,
-        marginLeft: margin2
+        marginLeft: margin2,
+        marginBottom: 2
     }, 
     scoreBlock: {
         marginTop: margin1,
@@ -111,10 +116,15 @@ export const styles = StyleSheet.create({
         marginTop: margin2
     },
     lastStroke: {
-        marginBottom: margin1
+        marginBottom: margin1,
+        // alignContent: 'center'
+        // justifyContent: 'center'
         // alignItems: 'center'
     },
     cardButton: {
+        // padding:10,
+        paddingVertical:12,
+        // paddingHorizontal:15,
         borderRadius: 15,
         marginTop: margin2,
         flex:1,
@@ -123,6 +133,8 @@ export const styles = StyleSheet.create({
         backgroundColor: backgroundColor
     },
     buttonText: {
+        // paddingTop: 10,
+        
         color: mainColor,
         fontSize: text2
     },

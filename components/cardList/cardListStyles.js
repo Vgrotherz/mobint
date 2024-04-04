@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         
     },
     manageBlock: {
-        flex:1,
+        // flex:1,
         alignItems:'center',
         backgroundColor: cardBackgroundColor,
     },
@@ -21,6 +21,7 @@ export const styles = StyleSheet.create({
         flex: 9,
         backgroundColor: textColor,
         alignItems:'center',
+        paddingBottom: 10
     },
     loadCardsText: {
         color: highlightTextColor,
@@ -32,5 +33,9 @@ export const styles = StyleSheet.create({
         marginTop: margin1,
         marginBottom: margin2
     
-    }    
+    }, 
+    noCompaniesText: {
+        marginTop: margin1,
+        fontSize: text2
+    }
 })

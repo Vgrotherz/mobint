@@ -7,7 +7,7 @@ export const screenWidth = Dimensions.get('window').width;
 export const img_large = screenWidth * 0.5;
 
 export const text0 = 6*vw;
-export const text1 = 6*vw;
+export const text1 = 5*vw;
 export const text2 = 4*vw;
 export const text3 = 2*vw;
 
@@ -17,8 +17,8 @@ export const margin3 = screenWidth * 0.2;
 
 export const sizePreloader = screenWidth * 0.2;
 
-export const logoSize = screenWidth * 0.15;
-export const iconSize = screenWidth * 0.08; 
+export const logoSize = screenWidth * 0.13;
+export const iconSize = screenWidth * 0.05; 
 
 
 // colors
