@@ -3,6 +3,7 @@ import { cardBackgroundColor, highlightTextColor, mainColor, margin1, margin2, t
 
 export const styles = StyleSheet.create({
     container : {
+        // width:'100%',
         flex: 1,
         
     },
@@ -21,7 +22,8 @@ export const styles = StyleSheet.create({
         flex: 9,
         backgroundColor: textColor,
         alignItems:'center',
-        paddingBottom: 10
+        
+
     },
     loadCardsText: {
         color: highlightTextColor,

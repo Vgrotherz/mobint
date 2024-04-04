@@ -7,6 +7,9 @@ class store {
   currentCompanyIndex = 0;
   refreshing = false;
   noCompanies = false;
+  isLoadingData = true;
+  isLoadingMore = false;
+
 
   constructor() {
     makeAutoObservable(this);
@@ -34,6 +37,14 @@ class store {
 
   setNoCompanies(value) {
     this.noCompanies = value;
+  }
+
+  setIsLoadingData(value) {
+    this.isLoadingData = value;
+  }
+
+  setIsLoadingMore(value) {
+    this.isLoadingMore = value;
   }
 }
 

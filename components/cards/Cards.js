@@ -2,15 +2,27 @@ import React from "react";
 import { View, Image, Text, FlatList, RefreshControl } from "react-native"; 
 import { styles } from "./cardsStyles";
 import { observer } from "mobx-react";
-// import store from "../utils/store";
+import Loader from "../loader/Loader";
 
 const eyeIcon = require('../../res/img/eye_white.png');
 const trashIcon = require('../../res/img/trash_white.png')
 
-const Cards = observer(({ companies, refreshing, onRefresh }) => {
-    
-    // const { companies, refreshing } = store;
-    // const displayedCompanies = companies.slice(0, loadingIndex + 1);
+const Cards = observer(({ companies, refreshing, onRefresh, loadMoreData, isLoadingMore  }) => {
+
+    // const handleEndReached = () => {
+    //     if (!isLoadingMore) {
+    //       loadMoreData();
+    //     }
+    //   };
+
+    const renderFooter = () => {
+        if (isLoadingMore) {
+            return <Loader />; 
+        } else {
+            return null; 
+        }
+    };
+
 
     return(
         <View style={styles.wholeCompanies}>
@@ -57,12 +69,15 @@ const Cards = observer(({ companies, refreshing, onRefresh }) => {
                         </View>
                     </View>
                 )}
-                refreshControl={ // обновление страницы
+                refreshControl={
                     <RefreshControl
-                        refreshing={refreshing} // Передача состояния обновления
-                        onRefresh={onRefresh} // Обработчик для обновления страницы
+                        refreshing={refreshing}
+                        onRefresh={onRefresh} 
                     />
                 }
+                ListFooterComponent={renderFooter} // Передаем функцию для отображения футера списка
+                onEndReachedThreshold={0.1}
+                onEndReached={loadMoreData}
             />
         </View>
     )

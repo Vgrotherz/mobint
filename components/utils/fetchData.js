@@ -1,7 +1,7 @@
 const apiUrl = "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesLong";
 const token = "123";
 
-const fetchData = async () => {
+const fetchData = async (offset, limit) => {
     try {
         const response = await fetch(apiUrl, {
             method: "POST",
@@ -10,8 +10,8 @@ const fetchData = async () => {
                 "TOKEN": token
             },
             body: JSON.stringify({
-                offset: 0,
-                limit: 5
+                offset: offset,
+                limit: limit
             })
         });
 
@@ -20,7 +20,7 @@ const fetchData = async () => {
         }
 
         const data = await response.json();
-        console.log("Data:", data);
+        // console.log("Data:", data);
         return data;
     } catch (error) {
         console.error("Error fetching data:", error);

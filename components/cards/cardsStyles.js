@@ -3,7 +3,8 @@ import { screenWidth, margin1, text1, iconSize, margin2, textColor, text0, backg
 
 export const styles = StyleSheet.create({
     wholeCompanies: {
-        width:"100%"
+        width:"100%",
+        // paddingBottom: 50
     },
     cardBlock : {
         // backgroundColor: 'blue',
