@@ -3,7 +3,6 @@ import { cardBackgroundColor, highlightTextColor, iconSize, logoSize, mainColor,
 
 export const styles = StyleSheet.create({
     container : {
-        // width:'100%',
         flex: 1,
         
     },
@@ -12,10 +11,8 @@ export const styles = StyleSheet.create({
         textShadow: '0 0 8px #000'
     },
     manageBlock: {
-        // flex:1,
         paddingTop:20,
         alignItems:'center',
-        // backgroundColor: 'blue',
         backgroundColor: cardBackgroundColor,
     },
     manageText: {
@@ -56,9 +53,6 @@ export const styles = StyleSheet.create({
     popup: {
         marginTop: 10,
     }, 
-    // popButtonBlock: {
-    //    marginTop: 20
-    // },
     closeButton: {
         borderRadius: 30
     },
@@ -70,10 +64,6 @@ export const styles = StyleSheet.create({
 
     },
     popupContainer: {
-        // flexDirection:'column',
-        // alignContent:'center',
-        // alignItems:'center',
-        // justifyContent:'center',
         width: '90%',
         backgroundColor: '#fff',
         borderRadius: 30,
@@ -84,8 +74,6 @@ export const styles = StyleSheet.create({
     },
     popupText: {
         color: '#949494',
-        // fontSize: 20,
-        // marginBottom: 10,
     },
     popButtonBlock: {
         marginTop: 20,
