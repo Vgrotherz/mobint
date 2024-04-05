@@ -9,7 +9,7 @@ export const img_large = screenWidth * 0.5;
 export const text0 = 6*vw;
 export const text1 = 5*vw;
 export const text2 = 4*vw;
-export const text3 = 2*vw;
+export const text3 = 3*vw;
 
 export const margin1 = screenWidth * 0.04;
 export const margin2 = screenWidth * 0.02;

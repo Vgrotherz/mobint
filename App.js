@@ -1,4 +1,3 @@
-// App.js
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
@@ -8,6 +7,7 @@ import StartingScreen from './components/startingScreen/StartingScreen';
 import CardList from './components/cardList/CardList';
 import { cardBackgroundColor } from './components/utils/parameters';
 import store from './components/utils/store';
+
 
 const App = observer(() => {
   useEffect(() => {
