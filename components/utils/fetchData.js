@@ -1,4 +1,4 @@
-const apiUrl = "http://devapp.bonusmoney.pro/mobileapp/getAllCompaniesLong";
+const apiUrl = "http://devapp.bonusmoney.pro/mobileapp/getAllCompanies";
 const token = "123";
 
 const fetchData = async (offset, limit) => {
@@ -16,14 +16,25 @@ const fetchData = async (offset, limit) => {
         });
 
         if (!response.ok) {
-            throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+            let errorData = {};
+            try {
+                errorData = await response.json();
+            } catch (jsonError) {
+                console.error("Error parsing JSON from response:", jsonError);
+            }
+            
+            const error = new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+            error.response = response;
+            error.errorData = errorData; // Прикрепляем данные об ошибке к объекту ошибки
+            throw error;
         }
 
         const data = await response.json();
         // console.log("Data:", data);
         return data;
     } catch (error) {
-        console.error("Error fetching data:", error);
+        throw error
+        // console.error("Error fetching data:", error);
     }
 }
 

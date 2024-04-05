@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"; 
-import { cardBackgroundColor, highlightTextColor, mainColor, margin1, margin2, text1, text2, textColor } from "../utils/parameters";
+import { cardBackgroundColor, highlightTextColor, iconSize, logoSize, mainColor, margin1, margin2, text1, text2, textColor } from "../utils/parameters";
 
 export const styles = StyleSheet.create({
     container : {
@@ -7,9 +7,15 @@ export const styles = StyleSheet.create({
         flex: 1,
         
     },
+    blur: {
+        color: 'transparent',
+        textShadow: '0 0 8px #000'
+    },
     manageBlock: {
         // flex:1,
+        paddingTop:20,
         alignItems:'center',
+        // backgroundColor: 'blue',
         backgroundColor: cardBackgroundColor,
     },
     manageText: {
@@ -39,5 +45,50 @@ export const styles = StyleSheet.create({
     noCompaniesText: {
         marginTop: margin1,
         fontSize: text2
-    }
+    },
+    errorIcon: {
+        width: logoSize * 0.8,
+        height: logoSize * 0.8,
+        tintColor: 'red',
+        marginBottom: 10,
+
+    },
+    popup: {
+        marginTop: 10,
+    }, 
+    // popButtonBlock: {
+    //    marginTop: 20
+    // },
+    closeButton: {
+        borderRadius: 30
+    },
+    popupBackground: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    popupContainer: {
+        // flexDirection:'column',
+        // alignContent:'center',
+        // alignItems:'center',
+        // justifyContent:'center',
+        width: '90%',
+        backgroundColor: '#fff',
+        borderRadius: 30,
+        padding: 10,
+    },
+    popupTextBlock: {
+        alignItems: 'center',
+    },
+    popupText: {
+        color: '#949494',
+        // fontSize: 20,
+        // marginBottom: 10,
+    },
+    popButtonBlock: {
+        marginTop: 20,
+    },
+
 })

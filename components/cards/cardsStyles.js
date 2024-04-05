@@ -4,11 +4,8 @@ import { screenWidth, margin1, text1, iconSize, margin2, textColor, text0, backg
 export const styles = StyleSheet.create({
     wholeCompanies: {
         width:"100%",
-        // paddingBottom: 50
     },
     cardBlock : {
-        // backgroundColor: 'blue',
-        // margin: margin1,
         marginTop: margin1,
         marginLeft: margin1,
         marginRight: margin1,
@@ -72,7 +69,6 @@ export const styles = StyleSheet.create({
         width: logoSize,
         height: logoSize,
         marginBottom: margin2,
-        // paddingLeft: 10,
     },
     scoreNumber: {
         fontSize: text0,
@@ -118,14 +114,9 @@ export const styles = StyleSheet.create({
     },
     lastStroke: {
         marginBottom: margin1,
-        // alignContent: 'center'
-        // justifyContent: 'center'
-        // alignItems: 'center'
     },
     cardButton: {
-        // padding:10,
         paddingVertical:12,
-        // paddingHorizontal:15,
         borderRadius: 15,
         marginTop: margin2,
         flex:1,
@@ -134,12 +125,72 @@ export const styles = StyleSheet.create({
         backgroundColor: backgroundColor
     },
     buttonText: {
-        // paddingTop: 10,
-        
         color: mainColor,
         fontSize: text2
     },
     wrap: {
         flexWrap:'wrap',
-    }
+    },
+    // popupBackground: {
+    //     flex: 1,
+    //     backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    //     justifyContent: 'center',
+    //     // alignContent: 'center'
+    //     alignItems: 'center',
+    // },
+    // popupContainer:{
+        
+    //     // marginTop: 270,
+    //     backgroundColor:'white',
+    //     // paddingLeft: 10,
+    //     // paddingRight: 10,
+
+    //     margin: 4,
+    //     borderRadius: 30
+    // },
+    // popupTextBlock: {
+    //     alignItems: 'center',
+    //     marginTop: 20,
+    //     marginBottom: 30,
+    // },
+    // popupText:{
+    //     color: '#949494',
+    // },
+    popup: {
+        marginTop: 10,
+    }, 
+    // popButtonBlock: {
+    //    marginTop: 20
+    // },
+    closeButton: {
+        borderRadius: 30
+    },
+    popupBackground: {
+        flex: 1,
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        justifyContent: 'center',
+        alignItems: 'center',
+
+    },
+    popupContainer: {
+        // flexDirection:'column',
+        // alignContent:'center',
+        // alignItems:'center',
+        // justifyContent:'center',
+        width: '90%',
+        backgroundColor: '#fff',
+        borderRadius: 30,
+        padding: 10,
+    },
+    popupTextBlock: {
+        alignItems: 'center',
+    },
+    popupText: {
+        color: '#949494',
+        // fontSize: 20,
+        // marginBottom: 10,
+    },
+    popButtonBlock: {
+        marginTop: 20,
+ },
 })

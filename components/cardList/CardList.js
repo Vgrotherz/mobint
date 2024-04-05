@@ -1,7 +1,7 @@
-// CardList.js
-import React, { useEffect } from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { useEffect,useState } from 'react';
+import { View, Text, Button, Modal, Image } from 'react-native';
 import { observer } from 'mobx-react';
+
 
 import Cards from '../cards/Cards';
 import Loader from '../loader/Loader';
@@ -10,8 +10,15 @@ import store from '../utils/store';
 
 import { styles } from './cardListStyles';
 
+const errorIcon = require('../../res/img/exclamation_white.png')
+
 const CardList = observer(() => {
-  const { isLoading, companies, refreshing, noCompanies, isLoadingData, isLoadingMore } = store;
+  const [ popupVisible, setPopupVisible ] = useState(false);
+  const [ errorPopupVisible, setErrorPopupVisible ] = useState(false);
+  const [ errorMessage, setErrorMessage ] = useState('');
+  const { isLoading, companies, refreshing, noCompanies, isLoadingData, isLoadingMore} = store;
+
+
 
   useEffect(() => {
     fetchData(0, 5)
@@ -25,6 +32,25 @@ const CardList = observer(() => {
         store.setIsLoading(false);
         store.setNoCompanies(true);
         store.setIsLoadingData(false);
+        
+        let message = 'Произошла неизвестная ошибка'; // по умолчанию message
+        if (error.response) {
+          switch (error.response.status) {
+            case 401:
+              message = 'Ошибка авторизации';
+              break;
+            case 400:
+              message = error.errorData && error.errorData.message ? error.errorData.message : 'Неверный запрос';
+              break;
+            case 500:
+              message = 'Все упало';
+              break;
+            default:
+              break; // по умолчанию message
+          }
+        }
+        setErrorMessage(message);
+        setErrorPopupVisible(true);
       });
   }, []);
 
@@ -47,7 +73,6 @@ const CardList = observer(() => {
           const newCompanies = [...store.companies, ...data.companies];
           store.setCompanies(newCompanies);
           store.setIsLoadingMore(false);
-          // store.setNoCompanies(newCompanies.length === 0);
           store.setIsLoadingData(false);
           store.setIsLoadingMore(false)
         })
@@ -64,7 +89,6 @@ const CardList = observer(() => {
       .then(data => {
         store.setCompanies(data.companies);
         store.setRefreshing(false);
-        // store.setNoCompanies(newCompanies.length === 0);
         store.setIsLoadingData(false);
       })
       .catch(error => {
@@ -75,7 +99,7 @@ const CardList = observer(() => {
 
   return (
     
-    <View style={styles.container}>
+    <View style={styles.container} >
       <View style={styles.manageBlock}>
         <Text style={styles.manageText}>Управление картами</Text>
       </View>
@@ -85,7 +109,6 @@ const CardList = observer(() => {
             <View style={styles.loader}>
               <Loader />
             </View>
-            {/* <Text style={styles.loadCardsText}>Подгрузка компаний</Text> */}
           </>
         )}
         {!isLoadingData && (
@@ -93,7 +116,7 @@ const CardList = observer(() => {
             <Text style={styles.noCompaniesText}>Нет компаний</Text>
           ) : (
             <>
-              <Cards companies={companies} refreshing={refreshing} onRefresh={onRefresh} loadMoreData={loadMoreData} isLoadingMore={isLoadingMore}/>
+              <Cards companies={companies} refreshing={refreshing} onRefresh={onRefresh} loadMoreData={loadMoreData} isLoadingMore={isLoadingMore} popupVisible={popupVisible} setPopupVisible={setPopupVisible}/>
               {isLoadingMore? (
                 <>
                   <Loader zIndex="3"/>
@@ -103,6 +126,23 @@ const CardList = observer(() => {
           )
         )}
       </View>
+      <Modal
+        visible={errorPopupVisible}
+        transparent={true}
+        onRequestClose={() => setErrorPopupVisible(false)}
+      >
+        <View style={styles.popupBackground}>
+          <View style={styles.popupContainer}>
+            <View style={[styles.popup, styles.popupTextBlock]}>
+              <Image source={errorIcon} style={styles.errorIcon}></Image>
+              <Text style={styles.popupText}>{errorMessage}</Text>
+              <View style={styles.popButtonBlock}>
+                <Button style={styles.closeButton} title="Закрыть" onPress={() => setErrorPopupVisible(false)} />
+              </View>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </View>
   );
 });

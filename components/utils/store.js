@@ -9,6 +9,7 @@ class store {
   noCompanies = false;
   isLoadingData = true;
   isLoadingMore = false;
+  popupVisible = false;
 
 
   constructor() {
@@ -45,6 +46,10 @@ class store {
 
   setIsLoadingMore(value) {
     this.isLoadingMore = value;
+  }
+
+  setPopupVisible(value) {
+    this.popupVisible = value;
   }
 }
 
