@@ -78,7 +78,25 @@ const CardList = observer(() => {
         })
         .catch(error => {
           console.error('Error fetching more data:', error);
-          store.setIsLoadingMore(false);
+                store.setIsLoadingMore(false);
+                let message = 'Произошла неизвестная ошибка';
+                if (error.response) {
+                    switch (error.response.status) {
+                        case 401:
+                            message = 'Ошибка авторизации';
+                            break;
+                        case 400:
+                            message = error.errorData && error.errorData.message ? error.errorData.message : 'Неверный запрос';
+                            break;
+                        case 500:
+                            message = 'Всё упало';
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                setErrorMessage(message);
+                setErrorPopupVisible(true);
         });
     }
   };

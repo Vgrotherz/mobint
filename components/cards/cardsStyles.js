@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { screenWidth, margin1, text1, iconSize, margin2, textColor, text0, backgroundColor, mainColor, margin3, accentColor, text2, text3, cardBackgroundColor, highlightTextColor, logoSize } from "../utils/parameters"; 
+import { margin1, text1, iconSize, margin2, textColor, text0, backgroundColor, mainColor, margin3, accentColor, text2, text3, cardBackgroundColor, highlightTextColor, logoSize } from "../utils/parameters"; 
 
 export const styles = StyleSheet.create({
     wholeCompanies: {
@@ -131,37 +131,9 @@ export const styles = StyleSheet.create({
     wrap: {
         flexWrap:'wrap',
     },
-    // popupBackground: {
-    //     flex: 1,
-    //     backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    //     justifyContent: 'center',
-    //     // alignContent: 'center'
-    //     alignItems: 'center',
-    // },
-    // popupContainer:{
-        
-    //     // marginTop: 270,
-    //     backgroundColor:'white',
-    //     // paddingLeft: 10,
-    //     // paddingRight: 10,
-
-    //     margin: 4,
-    //     borderRadius: 30
-    // },
-    // popupTextBlock: {
-    //     alignItems: 'center',
-    //     marginTop: 20,
-    //     marginBottom: 30,
-    // },
-    // popupText:{
-    //     color: '#949494',
-    // },
     popup: {
         marginTop: 10,
     }, 
-    // popButtonBlock: {
-    //    marginTop: 20
-    // },
     closeButton: {
         borderRadius: 30
     },
@@ -173,10 +145,6 @@ export const styles = StyleSheet.create({
 
     },
     popupContainer: {
-        // flexDirection:'column',
-        // alignContent:'center',
-        // alignItems:'center',
-        // justifyContent:'center',
         width: '90%',
         backgroundColor: '#fff',
         borderRadius: 30,
@@ -187,8 +155,6 @@ export const styles = StyleSheet.create({
     },
     popupText: {
         color: '#949494',
-        // fontSize: 20,
-        // marginBottom: 10,
     },
     popButtonBlock: {
         marginTop: 20,
