@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "work",
-    "slug": "work",
+    "slug": "mobint",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,6 +29,12 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "a84a257f-f0b4-494a-a7ad-3e35744b15af"
+      }
+    },
+    "owner": "verz"
   }
 }
