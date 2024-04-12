@@ -33,9 +33,15 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "a84a257f-f0b4-494a-a7ad-3e35744b15af"
+        "projectId": "ba894ef3-a368-499f-83aa-05948ed177b6"
       }
     },
-    "owner": "verz"
+    "owner": "verz",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/ba894ef3-a368-499f-83aa-05948ed177b6"
+    }
   }
 }
