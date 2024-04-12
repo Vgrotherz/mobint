@@ -1,7 +1,8 @@
 # проект выполнен в react native для мобильных устройств
 ## превью проекта
-<img src="./example/photo_2024-04-12_19-34-18.jpg" alt="стартовый экран" style="height: 600px; width:300px;"/>
-<img src="./example/photo_2024-04-12_19-33-11.jpg" alt="основной экран" style="height: 600px; width:300px;"/>
+<img src="./example/photo_2024-04-12_19-34-18.jpg" alt="стартовый экран" style="height: 620px; width:300px;"/>
+
+<img src="./example/photo_2024-04-12_19-33-11.jpg" alt="основной экран" style="height: 620px; width:300px;"/>
 
 запуск проекта
 ```sh
