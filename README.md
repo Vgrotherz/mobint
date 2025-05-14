@@ -7,7 +7,7 @@
 
 <img src="./example/photo_2024-04-12_19-33-11.jpg" alt="основной экран" style="height: 620px; width:300px;"/>
 
-запуск проекта 
+запуск проекта
 ```sh
 npx expo start
 ```
