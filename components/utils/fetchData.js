@@ -25,7 +25,7 @@ const fetchData = async (offset, limit) => {
             
             const error = new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
             error.response = response;
-            error.errorData = errorData; // Прикрепляем данные об ошибке к объекту ошибки
+            error.errorData = errorData; 
             throw error;
         }
 
